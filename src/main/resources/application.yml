@@ -1,0 +1,30 @@
+mybatis: 
+  type-aliases-package: com.entity
+  mapper-locations: classpath*:/mapper/*Mapper.xml
+spring: 
+  datasource: 
+#    url: jdbc:postgresql://19.121.251.21:1521/jmfps
+#    username: jypt_select
+#    password: jypt123456
+#    driver-class-name: org.postgresql.Driver
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://10.160.26.29:3306/db_common_v2?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=false&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: 111111
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    minEvictableIdleTimeMillis: 300000
+    testOnBorrow: false
+    testOnReturn: false
+    testWhileIdle: true
+    timeBetweenEvictionRunsMillis: 60000
+#    validationQuery: SELECT 1
+    validationQuery: select '1' from dual
+    logSlowSql: true
+    filters: stat,wall
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+data:
+  sqlPath: C:\Users\Administrator\Desktop\db_common_v2
